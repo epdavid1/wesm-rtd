@@ -27,6 +27,7 @@ forecasted_price = test[['price']].copy()
 forecasted_price.loc[0:11, 'price'] = np.nan
 price = pd.concat([historical_price, forecasted_price], axis=1)
 price.columns = ['price', 'forecasted price']
+price.index=list(range(0,120,5))
 #st.write(price)
 fig = px.line(price)
 fig.update_layout(
@@ -50,6 +51,7 @@ if data is not None:
     forecasted_price.loc[0:11, 'price'] = np.nan
     price = pd.concat([historical_price, forecasted_price], axis=1)
     price.columns = ['price', 'forecasted price']
+    price.index=list(range(0,120,5))
     #st.write(price)
     fig = px.line(price)
     fig.update_layout(
