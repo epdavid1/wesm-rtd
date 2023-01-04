@@ -31,8 +31,7 @@ price.columns = ['price', 'forecasted price']
 fig = px.line(price)
 fig.update_layout(
     xaxis_title="Relative time in minutes",
-    yaxis_title="PhP/MW",
-    legend_title="Load-Weighted Average Price",
+    yaxis_title="LWAP in PhP/MW"
     )
 st.plotly_chart(fig)
 data = st.file_uploader("Upload CSV file containing supply, demand, and price values. The first 12 rows should contain historical values of supply, demand, and price. The succeeding rows should only contain projected values of supply and demand which will be used to forecast the price.")
@@ -55,7 +54,6 @@ if data is not None:
     fig = px.line(price)
     fig.update_layout(
     xaxis_title="Relative time in minutes",
-    yaxis_title="PhP/MW",
-    legend_title="Load-Weighted Average Price",
+    yaxis_title="LWAP in PhP/MW"
     )
     st.plotly_chart(fig)
