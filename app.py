@@ -17,8 +17,8 @@ data = st.file_uploader("Upload CSV file containing supply, demand, and price va
 if data is not None:
     test = pd.read_csv(data)
     #st.write(test)
-    fig = px.line(test['price'][0:12])
-    st.plotly_chart(fig)
+    #fig = px.line(test['price'][0:12])
+    #st.plotly_chart(fig)
     for i in range(0,12):
       test_arr = test[i:i+12].to_numpy()
       forecast = y_scaler.inverse_transform(model.predict(X_scaler.transform(test_arr).reshape(1,12,3)))
