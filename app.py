@@ -6,6 +6,7 @@ from pickle import dump, load
 import tensorflow
 from tensorflow import keras
 from sklearn.preprocessing import MinMaxScaler
+from PIL import Image
 
 X_scaler = load(open('X_scaler.pkl', 'rb'))
 y_scaler = load(open('y_scaler.pkl', 'rb'))
@@ -13,6 +14,8 @@ y_scaler = load(open('y_scaler.pkl', 'rb'))
 model = keras.models.load_model('model_358_12.h5')
 
 st.title('WESM Load-Weighted Average Price Forecasting Tool')
+image = Image.open('example.jpg')
+st.image(image, caption='CSV format')
 test = pd.read_csv('test.csv')
 #st.write(test)
 #fig = px.line(test['price'][0:12])
