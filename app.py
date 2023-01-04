@@ -16,7 +16,7 @@ st.title('WESM Load-Weighted Average Price Forecasting Tool')
 data = st.file_uploader("Upload CSV file containing supply, demand, and price values. The first 12 rows should contain historical values of supply, demand, and price. The succeeding rows should only contain projected values of supply and demand which will be used to forecast the price.")
 if data is not None:
     test = pd.read_csv(data)
-    st.write(test)
+    #st.write(test)
     fig = px.line(test['price'][0:12])
     st.plotly_chart(fig)
     for i in range(0,12):
@@ -30,6 +30,6 @@ if data is not None:
     forecasted_price.loc[0:11, 'price'] = np.nan
     price = pd.concat([historical_price, forecasted_price], axis=1)
     price.columns = ['price', 'forecasted price']
-    st.write(price)
+    #st.write(price)
     fig = px.line(price)
     st.plotly_chart(fig)
