@@ -25,7 +25,6 @@ if data is not None:
       test.at[i+12, "price"] = forecast
     historical_price = test[['price']].copy()
     historical_price.loc[12:24, 'price'] = np.nan
-    historical_price
     forecasted_price = test[['price']].copy()
     forecasted_price.loc[0:11, 'price'] = np.nan
     price = pd.concat([historical_price, forecasted_price], axis=1)
