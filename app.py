@@ -65,6 +65,6 @@ else:
   fig.update_layout(
       xaxis_title="Relative time in minutes",
       yaxis_title="LWAP in PhP/MW",
-      title='Interactive forecast graph example (hover mouse to see values every 5 mins.)
+      title='Interactive forecast graph example (hover mouse to see values every 5 mins.'
       )
   st.plotly_chart(fig)
