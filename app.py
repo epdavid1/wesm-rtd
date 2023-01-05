@@ -61,10 +61,10 @@ else:
   price = pd.concat([historical_price, forecasted_price], axis=1)
   price.columns = ['price', 'forecasted price']
   price.index=list(range(0,120,5))
-  #st.write(price)
   fig = px.line(price)
   fig.update_layout(
       xaxis_title="Relative time in minutes",
-      yaxis_title="LWAP in PhP/MW"
+      yaxis_title="LWAP in PhP/MW",
+      title='Interactive forecast graph example (hover mouse to see values every 5 mins.)
       )
   st.plotly_chart(fig)
