@@ -42,7 +42,8 @@ if data is not None:
     fig = px.line(price)
     fig.update_layout(
     xaxis_title="Relative time in minutes",
-    yaxis_title="LWAP in PhP/MW"
+    yaxis_title="LWAP in PhP/MW",
+    title='Load-Weighted Average Price Forecast in the next 60 minutes',
     )
     st.plotly_chart(fig)
 else:
