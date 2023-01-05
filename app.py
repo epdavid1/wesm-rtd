@@ -16,12 +16,7 @@ model = keras.models.load_model('model_358_12.h5')
 st.title('WESM Load-Weighted Average Price Forecasting Tool')
 image = Image.open('example.png')
 st.image(image, caption='CSV format')
-
-
-
-
-
-data = st.file_uploader("Upload CSV file containing supply, demand, and price values. The first 12 rows should contain historical values of supply, demand, and price. The succeeding rows should only contain projected values of supply and demand which will be used to forecast the price.")
+data = st.file_uploader("Upload CSV file using the format given above including the labels. The first 12 rows should contain historical values of supply, demand, and LWAP. The succeeding 12 rows should only contain projected values of supply and demand which will be used to forecast the price in the next 60 minutes.")
 if data is not None:
     test = pd.read_csv(data)
     #st.write(test)
